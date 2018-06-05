@@ -2,6 +2,7 @@
    constructor(container,speed,pagination,arrow)
    {
      this.container = document.querySelector(container)
+     this.sliderContainer
      this.speed = speed
      this.transition = "ease-in"
      this.imagesNumber = 0
@@ -19,6 +20,13 @@
       // ajout de la classe heticSlider au container
       this.container.classList.add("heticSlider")
 
+      this.sliderContainer = document.createElement("div")
+      this.sliderContainer.classList.add("sliderContainer");
+      this.sliderContainer.innerHTML = this.container.innerHTML
+
+      this.container.innerHTML='';
+      this.container.appendChild(this.sliderContainer)
+
       // gestion de la présence des fleches.
       if(this.arrow)
       {
@@ -31,7 +39,7 @@
         this.rightArrow.setAttribute("href","#")
         this.rightArrow.classList.add("rightArrow");
         this.container.appendChild(this.rightArrow);
-        
+
       }
    }
 

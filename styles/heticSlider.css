@@ -1,10 +1,13 @@
 .heticSlider{
   width: 960px;
   margin:0 auto;
+  position:relative;
+}
+
+.sliderContainer{
   display: flex;
   flex-wrap: nowrap;
   overflow-x: hidden;
-  position:relative;
 }
 
 .heticSlider .leftArrow{
