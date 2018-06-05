@@ -2,12 +2,14 @@
   width: 960px;
   margin:0 auto;
   position:relative;
+  overflow-x: hidden;
+
 }
 
 .sliderContainer{
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: hidden;
+
 }
 
 .heticSlider .leftArrow{

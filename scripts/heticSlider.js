@@ -24,6 +24,9 @@
       this.sliderContainer.classList.add("sliderContainer");
       this.sliderContainer.innerHTML = this.container.innerHTML
 
+      let speed = this.speed/1000
+      this.sliderContainer.style.transition= `all ${this.transition} ${speed}s`
+
       this.container.innerHTML='';
       this.container.appendChild(this.sliderContainer)
 
@@ -40,7 +43,23 @@
         this.rightArrow.classList.add("rightArrow");
         this.container.appendChild(this.rightArrow);
 
+        let _this = this
+        this.rightArrow.addEventListener(
+          'click',
+          function(e)
+          {
+              e.preventDefault()
+              _this.next()
+          }
+        )
       }
+   }
+
+   next(){
+     this.currentImage++;
+     let position = -600 * this.currentImage;
+     console.log(position);
+     this.sliderContainer.style.transform = `translateX(${position}px)`
    }
 
  }
