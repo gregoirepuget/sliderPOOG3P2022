@@ -1,0 +1,7 @@
+ class HeticSlider{
+   constructor()
+   {
+     
+   }
+
+ }
