@@ -52,11 +52,30 @@
               _this.next()
           }
         )
+
+        this.leftArrow.addEventListener(
+          'click',
+          function(e)
+          {
+              e.preventDefault()
+              _this.previous()
+          }
+        )
+
+
       }
    }
 
    next(){
      this.currentImage++;
+     let position = -600 * this.currentImage;
+     console.log(position);
+     this.sliderContainer.style.transform = `translateX(${position}px)`
+   }
+
+   previous()
+   {
+     this.currentImage--;
      let position = -600 * this.currentImage;
      console.log(position);
      this.sliderContainer.style.transform = `translateX(${position}px)`
